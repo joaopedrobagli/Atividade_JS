@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Logo da Fatec</title>
+</head>
+<body>
+    
+    <img id="logo" src="img/logofatec.jpg">
+
+    <h2>Escolha um personagem:</h2>
+    
+    <button id="personagem1" onclick="mudarImagem('img/dudu.jpg')">Dudu</button>
+    <button id="personagem2" onclick="mudarImagem('img/veiga.webp')">Veiga</button>
+    <button id="personagem3" onclick="mudarImagem('img/gomez.jpg')">Gomez</button>
+    <button id="logoFatec" onclick="restaurarImagem()">Logo da Fatec</button>
+
+    <script>
+        
+        function mudarImagem(caminhoImagem) {
+            var imagem = document.getElementById('logo');
+            imagem.src = caminhoImagem;
+        }
+
+        
+        function restaurarImagem() {
+            var imagem = document.getElementById('logo');
+            imagem.src = 'img/logofatec.jpg';
+        }
+    </script>
+</body>
+</html>
+

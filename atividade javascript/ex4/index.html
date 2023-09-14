@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Xhopii</title>
+</head>
+<body>
+  
+    <section class="logo">
+        <img src="img/logo.png" alt="image" height="52" width="52">
+        <h1>Xhopii</h1>
+    </section>
+    <nav class="menu-horizontal">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Cadastro.html">Cadastro Online</a></li>
+            <li><a href="Funcionario.html">Cadastro Funcionario</a></li>
+            <li><a href="Produto.html">Cadastro Produto</a></li>
+            <li><a href="Clientes.html">Ver Clientes</a></li>
+            <li><a href="vFuncionario.html">Ver Funcionario</a></li>
+            <li><a href="vProdutos.html">Ver Produtos</a></li>
+        </ul>
+    </nav>
+
+    <section class="home">
+        <div class="home-img">
+            <img src="img/nike.jpg" class="one">
+        </div>
+
+        <div class="home-text">
+            <h2 id="productName">NIKE</h2>
+            <p>Preço: R$<span id="productPrice">76,90</span></p>
+            <p>175 Peças disponíveis</p>
+            <br>
+            
+    
+            <p>Escolha o Tamanho:</p>
+            <br>
+            <select id="sizeDropdown" onchange="updateSize()">
+                <option value="39-40">39-40</option>
+                <option value="38-37">38-37</option>
+                <option value="37-36">37-36</option>
+                <option value="36-35">36-35</option>
+            </select>
+            <br><br>
+            
+        
+            <a href="#" class="btn">Comprar Agora</a>
+        </div>
+    </section>
+
+    <div class="main">
+        <div class="row">
+            <li><img src="img/nike.jpg" onclick="slider('img/nike.jpg', 'NIKE', '76,90')"></li>
+        </div><!--row-->
+        <div class="row">
+            <li><img src="img/chinelo.jpg" onclick="slider('img/chinelo.jpg', 'CHINELO', '25,00')"></li>
+        </div><!--row-->
+
+        <div class="row2">
+            <li><img src="img/saltoalto.jpg" onclick="slider('img/saltoalto.jpg', 'SALTO ALTO', '76,90')"></li>
+        </div><!--row2-->
+
+        <div class="row3">
+            <li><img src="img/sandalha.jpg" onclick="slider('img/sandalha.jpg', 'SANDALHA', '55,00')"></li>
+        </div><!--row3-->
+        <div class="row3">
+            <li><img src="img/bota.jpg" onclick="slider('img/bota.jpg', 'BOTA', '100,00')"></li>
+        </div><!--row3-->
+    </div><!--main-->
+
+    <script>
+        function slider(anything, productName, productPrice) {
+            document.querySelector('.one').src = anything;
+            document.querySelector('#productName').textContent = productName;
+            document.querySelector('#productPrice').textContent = productPrice;
+        }
+
+        function updateSize() {
+            var sizeDropdown = document.getElementById("sizeDropdown");
+            var selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+            document.querySelector('#selectedSize').textContent = 'Tamanho Selecionado: ' + selectedSize;
+        }
+
+        let menu = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navbar.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
+
